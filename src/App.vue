@@ -17,7 +17,7 @@ function toggleCard() {
   isCardVisible.value = !isCardVisible.value;
 }
 
-function setFont(name) {
+function setFont(name: string) {
   store.setFont(name);
 }
 

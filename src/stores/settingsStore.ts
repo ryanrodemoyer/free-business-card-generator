@@ -32,7 +32,7 @@ export const useSettingsStore = defineStore("settings", {
     // styles: (state) =>
   },
   actions: {
-    setFont(name) {
+    setFont(name: string) {
       this.ui.font = name;
     },
     // increment() {
