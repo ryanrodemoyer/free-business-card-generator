@@ -20,8 +20,14 @@ function onMediaLogoChange(e: any) {
 function clearForm() {
   store.clearForm();
 
-  document.getElementById("profileUpload").value = null;
-  document.getElementById("logoUpload").value = null;
+  const elem1 = document.getElementById("profileUpload");
+  if (elem1) {
+    elem1.value = null;
+  }
+  const elem2 = document.getElementById("logoUpload");
+  if (elem2) {
+    elem2.value = null;
+  }
 }
 
 onMounted(() => {});
