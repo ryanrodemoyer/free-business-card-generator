@@ -29,6 +29,9 @@ const fonts = [
   "helvetica",
   "optima",
   "noteworthy",
+  "futura",
+  "trajan",
+  "baskerville",
 ];
 
 fonts.sort();
@@ -40,8 +43,14 @@ onMounted(() => {});
   <div class="px-3 pb-3 mx-auto text-center">
     <h1 class="text-5xl">Free Business Card Generator</h1>
     <div class="mb-3">https://www.freebusinesscardgenerator.com</div>
+    <p class="text-xs">
+      All information stays on YOUR device. 100% privacy is maintained.
+    </p>
     <div class="">
-      <button class="underline" @click="toggleCard()">
+      <button
+        class="underline w-full bg-slate-100 hover:bg-slate-200"
+        @click="toggleCard()"
+      >
         {{ isCardVisible ? "hide card" : "show card" }}
       </button>
     </div>

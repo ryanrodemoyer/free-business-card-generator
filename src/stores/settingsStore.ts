@@ -46,10 +46,10 @@ export const useSettingsStore = defineStore("settings", {
       socials: {
         fb: "",
         gh: "https://github.com/ryanrodemoyer",
-        ig: "",
+        ig: "https://www.instagram.com/rrodey/",
         li: "https://www.linkedin.com/in/ryanrodemoyer/",
         x: "https://twitter.com/StackingSnacks",
-        yt: "",
+        yt: "https://www.youtube.com/channel/UCh1Hn6C6XfdO-Wi1wQ75OPg",
       },
     },
     media: {
