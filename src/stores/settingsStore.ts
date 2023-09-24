@@ -24,8 +24,8 @@ export const useSettingsStore = defineStore("settings", {
       },
     },
     media: {
-      profile: null,
-      logo: null,
+      // profile: null,
+      // logo: null,
     },
     ui: {
       font: "eb garamond",
