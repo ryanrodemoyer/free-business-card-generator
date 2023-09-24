@@ -54,23 +54,8 @@ onMounted(() => {});
         {{ isCardVisible ? "hide card" : "show card" }}
       </button>
     </div>
-    <!-- <div id="designs" v-if="!isCardVisible">
-      <div class="flex">
-        <div>
-          <p class="font-bold">Design 01</p>
-          <img src="./assets/card01.png" alt="design 01" />
-        </div>
 
-        <div>
-          <p class="font-bold">Design 02</p>
-          <img src="./assets/card02.png" alt="design 02" />
-        </div>
-      </div>
-    </div> -->
-    <div id="settings">
-      <h1 class="text-3xl" v-if="!isCardVisible">Business Card Settings</h1>
-    </div>
-    <div id="config" v-if="!isCardVisible">
+    <div id="settings" v-if="!isCardVisible">
       <settings />
     </div>
     <div id="fonts" class="grid grid-cols-3 text-center" v-if="isCardVisible">

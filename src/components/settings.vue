@@ -14,15 +14,24 @@ function onMediaProfileChange(e: any) {
 }
 
 function onMediaLogoChange(e: any) {
-  console.log(typeof e);
-
   store.setMediaLogo(e);
+}
+
+function clearForm() {
+  store.clearForm();
+
+  document.getElementById("profileUpload").value = null;
+  document.getElementById("logoUpload").value = null;
 }
 
 onMounted(() => {});
 </script>
 
 <template>
+  <h1 class="text-3xl" v-if="!isCardVisible">Business Card Settings</h1>
+  <button class="underline" @click="($event) => clearForm()">
+    clear all fields
+  </button>
   <div class="text-left">
     <label class="block">
       <span class="text-gray-700">Full Name</span>
@@ -110,6 +119,17 @@ onMounted(() => {});
     </label>
 
     <label class="block">
+      <a :href="f.socials.fb" target="_blank" v-if="f.socials.gh">GitHub</a>
+      <span class="text-gray-700" v-else>GitHub</span>
+      <input
+        type="text"
+        class="mt-1 block w-full"
+        placeholder="github"
+        v-model="f.socials.gh"
+      />
+    </label>
+
+    <label class="block">
       <a :href="f.socials.ig" target="_blank" v-if="f.socials.ig">Instagram</a>
       <span class="text-gray-700" v-else>Instagram</span>
       <input
@@ -158,7 +178,7 @@ onMounted(() => {});
     <label class="block">
       <span class="text-gray-700">Profile</span>
       <div>
-        <input type="file" @change="onMediaProfileChange" />
+        <input type="file" id="profileUpload" @change="onMediaProfileChange" />
 
         <div id="profilePreview">
           <div
@@ -177,7 +197,7 @@ onMounted(() => {});
     <label class="block">
       <span class="text-gray-700">Logo</span>
       <div>
-        <input type="file" @change="onMediaLogoChange" />
+        <input type="file" id="logoUpload" @change="onMediaLogoChange" />
 
         <div id="logoPreview">
           <div

@@ -65,6 +65,24 @@ export const useSettingsStore = defineStore("settings", {
     // styles: (state) =>
   },
   actions: {
+    clearForm() {
+      this.f.name = "";
+      this.f.title = "";
+      this.f.company = "";
+      this.f.csz = "";
+      this.f.email = "";
+      this.f.phone = "";
+      this.f.website = "";
+      this.f.socials.fb = "";
+      this.f.socials.gh = "";
+      this.f.socials.ig = "";
+      this.f.socials.li = "";
+      this.f.socials.x = "";
+      this.f.socials.yt = "";
+      this.media.profile = null;
+      this.media.logo = null;
+      this.ui.font = "eb garamond";
+    },
     setFont(name: string) {
       this.ui.font = name;
     },
