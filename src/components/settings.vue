@@ -9,11 +9,11 @@ const { f, media } = storeToRefs(store);
 
 const profile = ref(null);
 
-function onMediaProfileChange(e) {
+function onMediaProfileChange(e: any) {
   store.setMediaProfile(e);
 }
 
-function onMediaLogoChange(e) {
+function onMediaLogoChange(e: any) {
   console.log(e);
   store.setMediaLogo(e);
 }

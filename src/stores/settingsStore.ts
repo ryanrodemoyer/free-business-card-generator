@@ -39,11 +39,11 @@ export const useSettingsStore = defineStore("settings", {
     setFont(name: string) {
       this.ui.font = name;
     },
-    setMediaProfile(e) {
+    setMediaProfile(e: any) {
       const file = e.target.files[0];
       this.media.profile = URL.createObjectURL(file);
     },
-    setMediaLogo(e) {
+    setMediaLogo(e: any) {
       const file = e.target.files[0];
       this.media.logo = URL.createObjectURL(file);
     },
