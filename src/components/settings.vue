@@ -7,8 +7,6 @@ import { useSettingsStore } from "../stores/settingsStore";
 const store = useSettingsStore();
 const { f, media } = storeToRefs(store);
 
-const profile = ref(null);
-
 function onMediaProfileChange(e: any) {
   store.setMediaProfile(e);
 }
@@ -34,7 +32,7 @@ onMounted(() => {});
 </script>
 
 <template>
-  <h1 class="text-3xl" v-if="!isCardVisible">Business Card Settings</h1>
+  <h1 class="text-3xl">Business Card Settings</h1>
   <button class="underline" @click="($event) => clearForm()">
     clear all fields
   </button>
