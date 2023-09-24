@@ -9,12 +9,13 @@ const { f, media } = storeToRefs(store);
 
 const profile = ref(null);
 
-function onMediaProfileChange(e: any) {
+function onMediaProfileChange(e: HTMLInputElement) {
   store.setMediaProfile(e);
 }
 
-function onMediaLogoChange(e: any) {
-  console.log(e);
+function onMediaLogoChange(e: HTMLInputElement) {
+  console.log(typeof e);
+
   store.setMediaLogo(e);
 }
 
