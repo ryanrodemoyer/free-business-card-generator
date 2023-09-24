@@ -49,7 +49,7 @@ export const useSettingsStore = defineStore("settings", {
         ig: "https://www.instagram.com/rrodey/",
         li: "https://www.linkedin.com/in/ryanrodemoyer/",
         x: "https://twitter.com/StackingSnacks",
-        yt: "https://www.youtube.com/channel/UCh1Hn6C6XfdO-Wi1wQ75OPg",
+        yt: "https://www.youtube.com/@rrodeyy",
       },
     },
     media: {
