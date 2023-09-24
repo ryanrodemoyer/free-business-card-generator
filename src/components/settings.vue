@@ -20,13 +20,13 @@ function onMediaLogoChange(e: any) {
 function clearForm() {
   store.clearForm();
 
-  const elem1 = document.getElementById("profileUpload");
+  const elem1 = <HTMLInputElement>document.getElementById("profileUpload");
   if (elem1) {
-    elem1.value = null;
+    elem1.value = "";
   }
-  const elem2 = document.getElementById("logoUpload");
+  const elem2 = <HTMLInputElement>document.getElementById("logoUpload");
   if (elem2) {
-    elem2.value = null;
+    elem2.value = "";
   }
 }
 
