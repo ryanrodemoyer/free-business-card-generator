@@ -23,6 +23,10 @@ export const useSettingsStore = defineStore("settings", {
         yt: "",
       },
     },
+    media: {
+      profile: null,
+      logo: null,
+    },
     ui: {
       font: "eb garamond",
     },
@@ -35,8 +39,13 @@ export const useSettingsStore = defineStore("settings", {
     setFont(name: string) {
       this.ui.font = name;
     },
-    // increment() {
-    //   this.count++;
-    // },
+    setMediaProfile(e) {
+      const file = e.target.files[0];
+      this.media.profile = URL.createObjectURL(file);
+    },
+    setMediaLogo(e) {
+      const file = e.target.files[0];
+      this.media.logo = URL.createObjectURL(file);
+    },
   },
 });

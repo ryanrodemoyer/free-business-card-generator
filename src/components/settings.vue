@@ -4,8 +4,19 @@ import { storeToRefs } from "pinia";
 
 import { useSettingsStore } from "../stores/settingsStore";
 
-// access the `store` variable anywhere in the component ✨
-const { f } = storeToRefs(useSettingsStore());
+const store = useSettingsStore();
+const { f, media } = storeToRefs(store);
+
+const profile = ref(null);
+
+function onMediaProfileChange(e) {
+  store.setMediaProfile(e);
+}
+
+function onMediaLogoChange(e) {
+  console.log(e);
+  store.setMediaLogo(e);
+}
 
 onMounted(() => {});
 </script>
@@ -139,6 +150,46 @@ onMounted(() => {});
         placeholder="youtube"
         v-model="f.socials.yt"
       />
+    </label>
+
+    <h1 class="text-3xl mt-4">Media</h1>
+
+    <label class="block">
+      <span class="text-gray-700">Profile</span>
+      <div>
+        <input type="file" @change="onMediaProfileChange" />
+
+        <div id="profilePreview">
+          <div
+            id="profile"
+            :style="{
+              width: `150px`,
+              height: `150px`,
+              background: `url(${media.profile}) no-repeat center /cover`,
+            }"
+            v-if="media.profile"
+          />
+        </div>
+      </div>
+    </label>
+
+    <label class="block">
+      <span class="text-gray-700">Logo</span>
+      <div>
+        <input type="file" @change="onMediaLogoChange" />
+
+        <div id="logoPreview">
+          <div
+            id="logo"
+            :style="{
+              width: `150px`,
+              height: `150px`,
+              background: `url(${media.logo}) no-repeat center /cover`,
+            }"
+            v-if="media.logo"
+          />
+        </div>
+      </div>
     </label>
   </div>
 </template>

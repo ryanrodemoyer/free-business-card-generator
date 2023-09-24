@@ -7,9 +7,10 @@ import { useSettingsStore } from "./stores/settingsStore";
 import settings from "./components/settings.vue";
 import card01 from "./components/card01.vue";
 import card02 from "./components/card02.vue";
+import card03 from "./components/card03.vue";
 
 const store = useSettingsStore();
-const { f, ui } = storeToRefs(store);
+const { f, ui, media } = storeToRefs(store);
 
 let isCardVisible = ref(false);
 
@@ -75,6 +76,7 @@ onMounted(() => {});
       </div>
     </div>
     <div id="cards" class="w-full md:w-4/6 md:mx-auto">
+      <card03 v-if="isCardVisible" class="mt-6" />
       <card01 v-if="isCardVisible" class="mt-6" />
       <card02 v-if="isCardVisible" class="mt-6" />
     </div>
