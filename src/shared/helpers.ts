@@ -1,4 +1,6 @@
-function removeTrailingSlash(str) {
+import html2canvas from "html2canvas";
+
+function removeTrailingSlash(str: string) {
   if (str.endsWith("/")) {
     return str.slice(0, -1);
   }
@@ -21,8 +23,8 @@ export function shorten(val: string) {
   );
 }
 
-export function print(element) {
-  html2canvas(element, { scale: "3" }).then(function (canvas) {
+export function print(element: HTMLElement) {
+  html2canvas(element, { scale: 3 }).then(function (canvas) {
     const imgData = canvas.toDataURL("image/png");
 
     // Create a link element to download the image
