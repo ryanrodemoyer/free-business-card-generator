@@ -36,6 +36,10 @@ onMounted(() => {});
   <button class="underline" @click="($event) => clearForm()">
     clear all fields
   </button>
+  <p class="text-sm italic">
+    Update these fields to make your personal business card.
+  </p>
+
   <div class="text-left">
     <label class="block">
       <span class="text-gray-700">Full Name</span>
