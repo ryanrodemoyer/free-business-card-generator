@@ -23,7 +23,7 @@ export function shorten(val: string) {
   );
 }
 
-export function print(element: HTMLElement) {
+export function print(element: HTMLElement | null) {
   html2canvas(element, { scale: 3 }).then(function (canvas) {
     const imgData = canvas.toDataURL("image/png");
 
