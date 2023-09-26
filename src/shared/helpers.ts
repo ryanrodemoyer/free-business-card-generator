@@ -24,15 +24,17 @@ export function shorten(val: string) {
 }
 
 export function print(element: HTMLElement | null) {
-  html2canvas(element, { scale: 3 }).then(function (canvas) {
-    const imgData = canvas.toDataURL("image/png");
+  if (element) {
+    html2canvas(element, { scale: 3 }).then(function (canvas) {
+      const imgData = canvas.toDataURL("image/png");
 
-    // Create a link element to download the image
-    const link = document.createElement("a");
-    link.href = imgData;
-    link.download = "screenshot.png";
+      // Create a link element to download the image
+      const link = document.createElement("a");
+      link.href = imgData;
+      link.download = "screenshot.png";
 
-    // Simulate a click on the link to trigger the download
-    link.click();
-  });
+      // Simulate a click on the link to trigger the download
+      link.click();
+    });
+  }
 }
