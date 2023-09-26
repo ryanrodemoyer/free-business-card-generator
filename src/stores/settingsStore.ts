@@ -38,7 +38,7 @@ export const useSettingsStore = defineStore("settings", {
     f: {
       name: "Ryan Rodemoyer",
       title: "Automation Expert",
-      company: "Pittsburgh Business Automation",
+      company: "Pittsburgh Biz Automation",
       csz: "Pittsburgh, PA 15212",
       email: "hello@freebusinesscardgenerator.com",
       phone: "(555) 555-1212",

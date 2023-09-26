@@ -4,32 +4,32 @@ import { storeToRefs } from "pinia";
 
 import socials from "./socials.vue";
 
-import { shorten } from "../shared/helpers";
+import { shorten, print } from "../shared/helpers";
 import { useSettingsStore } from "../stores/settingsStore";
 
-// access the `store` variable anywhere in the component ✨
 const { f, ui } = storeToRefs(useSettingsStore());
+
+function sendToPrint() {
+  print(document.getElementById("card2"));
+}
 
 onMounted(() => {});
 </script>
 
 <template>
+  <button @click="sendToPrint()">save high res image</button>
   <div
     id="card2"
-    class="m-2 p-8 border-solid border-2 border-black-500 h-56 rounded-md"
-    :style="{ fontFamily: ui.font }"
+    class="m-2 p-4 mx-auto text-sm border-solid border-2 border-black-500 rounded-md"
+    :style="{ fontFamily: ui.font, width: '361px', height: '211px' }"
   >
-    <div class="grid grid-cols-2 h-full divide-x-2 divide-solid">
+    <div class="grid grid-cols-2 divide-x-2 divide-solid">
       <div class="px-2">
-        <div class="text-3xl font-bold text-right">{{ f.name }}</div>
-        <div class="text-xl text-right">{{ f.title }}</div>
+        <div class="text-xl font-bold text-right">{{ f.name }}</div>
+        <div class="text-lg text-right">{{ f.title }}</div>
       </div>
       <div class="px-2 text-xs text-left">
         <div class="grid grid-cols-10">
-          <div class="font-extrabold">E</div>
-          <div class="col-span-9">
-            <a :href="`mailto:${f.email}`">{{ f.email }}</a>
-          </div>
           <div class="font-extrabold">P</div>
 
           <div class="col-span-9">{{ f.phone }}</div>
@@ -40,11 +40,14 @@ onMounted(() => {});
           </div>
           <socials />
         </div>
-        <div class="mt-3">
-          <div>{{ f.company }}</div>
-          <div>{{ f.csz }}</div>
-        </div>
       </div>
+    </div>
+    <div class="mt-1">
+      <div>
+        <a :href="`mailto:${f.email}`">{{ f.email }}</a>
+      </div>
+      <div>{{ f.company }}</div>
+      <div>{{ f.csz }}</div>
     </div>
   </div>
 </template>
