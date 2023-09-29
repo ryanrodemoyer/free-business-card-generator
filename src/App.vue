@@ -9,6 +9,7 @@ import card01 from "./components/card01.vue";
 import card02 from "./components/card02.vue";
 import card03 from "./components/card03.vue";
 import card04 from "./components/card04.vue";
+import card05 from "./components/card05.vue";
 
 const store = useSettingsStore();
 const { f, ui, media } = storeToRefs(store);
@@ -76,10 +77,11 @@ onMounted(() => {});
     <hr class="m-2 h-px bg-black border-0" />
     <div id="cards" class="w-full md:w-4/6 md:mx-auto">
       <h2>Business Cards!</h2>
+      <card05 v-if="isCardVisible" class="mt-6" />
       <card04 v-if="isCardVisible" class="mt-6" />
       <!-- <card03 v-if="isCardVisible" class="mt-6" /> -->
-      <card01 v-if="isCardVisible" class="mt-6" />
       <card02 v-if="isCardVisible" class="mt-6" />
+      <card01 v-if="isCardVisible" class="mt-6" />
     </div>
   </div>
 </template>
