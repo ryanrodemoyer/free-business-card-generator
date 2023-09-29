@@ -20,7 +20,7 @@ onMounted(() => {});
     <button @click="sendToPrint()">save high res image</button>
     <div
       id="card1"
-      class="bg-red-200 relative p-[12.5px] w-[361px] h-[211px] mx-auto text-sm rounded-md"
+      class="bg-red-200 relative p-[11px] w-[361px] h-[211px] mx-auto text-sm rounded-md"
       :style="{
         fontFamily: ui.font,
       }"

@@ -77,6 +77,10 @@ onMounted(() => {});
     <hr class="m-2 h-px bg-black border-0" />
     <div id="cards" class="w-full md:w-4/6 md:mx-auto">
       <h2>Business Cards!</h2>
+      <div class="text-xs w-2/3 mx-auto text-center italic">
+        The pinkish border around the card is referred to as the bleed. The
+        exported card will not have this color.
+      </div>
       <card05 v-if="isCardVisible" class="mt-6" />
       <card04 v-if="isCardVisible" class="mt-6" />
       <!-- <card03 v-if="isCardVisible" class="mt-6" /> -->
