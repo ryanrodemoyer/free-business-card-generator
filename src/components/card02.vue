@@ -19,15 +19,20 @@ onMounted(() => {});
 <template>
   <div class="bg-slate-300 p-3 rounded-md">
     <button @click="sendToPrint()">save high res image</button>
+    <div>design #2</div>
     <div
       id="card2"
-      class="bg-red-200 rounded-md relative p-[11px] mx-auto text-sm"
-      :style="{ fontFamily: ui.font, width: '361px', height: '211px' }"
+      class="bg-red-200 relative p-[11px] w-[361px] h-[211px] mx-auto text-sm rounded-md"
+      :style="{
+        fontFamily: ui.font,
+      }"
     >
       <div class="absolute left-0 top-0 m-0 p-0 overflow-hidden">
         <!-- <img src="bg05.jpg" class="rounded-md opacity-50 border-0 h-211 w-361" /> -->
       </div>
-      <div class="bg-white relative">
+      <div
+        class="bg-white relative h-full flex flex-col justify-center items-center"
+      >
         <div class="grid grid-cols-2 divide-x-2 divide-solid">
           <div class="px-2">
             <div class="text-xl font-bold text-right">{{ f.name }}</div>

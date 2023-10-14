@@ -20,15 +20,15 @@ onMounted(() => {});
   <div class="bg-slate-300 p-3 rounded-md">
     <button @click="sendToPrint()">save high res image</button>
     <div
-      id="card4"
-      class="bg-red-200 p-[11px] mx-auto text-xs rounded-md"
+      id="card1"
+      class="bg-red-200 relative p-[11px] w-[211px] h-[361px] mx-auto text-xs rounded-md"
       :style="{
         fontFamily: ui.font,
-        width: '211px',
-        height: '361px',
       }"
     >
-      <div class="bg-white m-0 p-0">
+      <div
+        class="bg-white relative h-full flex flex-col justify-center items-center"
+      >
         <div
           class="h-scale mx-auto rounded-full text-center"
           v-if="media.profile"
