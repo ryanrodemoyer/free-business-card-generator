@@ -48,20 +48,17 @@ onMounted(() => {});
     <p class="text-xs">
       All information stays on YOUR device. 100% privacy is maintained.
     </p>
-    <div class="">
+    <div class="w-full md:w-4/6 md:mx-auto">
       <button
         class="underline w-full bg-slate-100 hover:bg-slate-200 h-10"
         @click="toggleCard()"
       >
         {{ isCardVisible ? "update information" : "show card" }}
       </button>
+      <hr class="m-2 h-px bg-black border-0" />
     </div>
 
-    <div id="settings" v-if="!isCardVisible">
-      <settings />
-    </div>
-    <hr class="m-2 h-px bg-black border-0" />
-    <div id="cards" class="w-full md:w-4/6 md:mx-auto">
+    <div id="cards" class="w-full md:w-4/6 md:mx-auto" v-if="isCardVisible">
       <h2>Business Cards!</h2>
       <div class="text-xs w-2/3 mx-auto text-center italic mb-2">
         The pinkish border around the card is referred to as the bleed. The
@@ -83,9 +80,11 @@ onMounted(() => {});
       </div>
       <card05 v-if="isCardVisible" class="mt-6" />
       <card04 v-if="isCardVisible" class="mt-6" />
-      <!-- <card03 v-if="isCardVisible" class="mt-6" /> -->
       <card02 v-if="isCardVisible" class="mt-6" />
       <card01 v-if="isCardVisible" class="mt-6" />
+    </div>
+    <div id="settings" class="w-full md:w-4/6 md:mx-auto" v-else>
+      <settings />
     </div>
   </div>
 </template>
