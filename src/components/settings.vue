@@ -41,6 +41,48 @@ onMounted(() => {});
   </p>
 
   <div class="text-left">
+    <h1 class="text-3xl mt-4">Media</h1>
+
+    <label class="block">
+      <span class="text-gray-700">Profile</span>
+      <div>
+        <input type="file" id="profileUpload" @change="onMediaProfileChange" />
+
+        <div id="profilePreview">
+          <div
+            id="profile"
+            :style="{
+              width: `150px`,
+              height: `150px`,
+              background: `url(${media.profile}) no-repeat center /cover`,
+            }"
+            v-if="media.profile"
+          />
+        </div>
+      </div>
+    </label>
+
+    <label class="block">
+      <span class="text-gray-700">Logo</span>
+      <div>
+        <input type="file" id="logoUpload" @change="onMediaLogoChange" />
+
+        <div id="logoPreview">
+          <div
+            id="logo"
+            :style="{
+              width: `150px`,
+              height: `150px`,
+              background: `url(${media.logo}) no-repeat center /cover`,
+            }"
+            v-if="media.logo"
+          />
+        </div>
+      </div>
+    </label>
+
+    <h1 class="text-3xl mt-4">Contact</h1>
+
     <label class="block">
       <span class="text-gray-700">Full Name</span>
       <input
@@ -179,46 +221,6 @@ onMounted(() => {});
         placeholder="youtube"
         v-model="f.socials.yt"
       />
-    </label>
-
-    <h1 class="text-3xl mt-4">Media</h1>
-
-    <label class="block">
-      <span class="text-gray-700">Profile</span>
-      <div>
-        <input type="file" id="profileUpload" @change="onMediaProfileChange" />
-
-        <div id="profilePreview">
-          <div
-            id="profile"
-            :style="{
-              width: `150px`,
-              height: `150px`,
-              background: `url(${media.profile}) no-repeat center /cover`,
-            }"
-            v-if="media.profile"
-          />
-        </div>
-      </div>
-    </label>
-
-    <label class="block">
-      <span class="text-gray-700">Logo</span>
-      <div>
-        <input type="file" id="logoUpload" @change="onMediaLogoChange" />
-
-        <div id="logoPreview">
-          <div
-            id="logo"
-            :style="{
-              width: `150px`,
-              height: `150px`,
-              background: `url(${media.logo}) no-repeat center /cover`,
-            }"
-            v-if="media.logo"
-          />
-        </div>
-      </div>
     </label>
   </div>
 </template>

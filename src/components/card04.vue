@@ -1,17 +1,16 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
 import { storeToRefs } from "pinia";
-import socials from "./socials.vue";
 
-import { shorten, print } from "../shared/helpers";
+import saveCard from "./saveCard.vue";
+
+import { shorten } from "../shared/helpers";
 
 import { useSettingsStore } from "../stores/settingsStore";
 
 const { f, ui, media } = storeToRefs(useSettingsStore());
 
-function sendToPrint() {
-  print(document.getElementById("card4"));
-}
+const card = ref(null);
 
 function getEmailCssClasses(val: string): string[] {
   if (val.length >= 30) {
@@ -26,8 +25,9 @@ onMounted(() => {});
 
 <template>
   <div class="bg-slate-300 p-3 rounded-md">
-    <button @click="sendToPrint()">save high res image</button>
+    <saveCard :elem="card" />
     <div
+      ref="card"
       id="card1"
       class="bg-red-200 relative p-[11px] w-[211px] h-[361px] mx-auto text-xs rounded-md"
       :style="{

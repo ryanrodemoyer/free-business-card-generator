@@ -2,23 +2,22 @@
 import { ref, onMounted } from "vue";
 import { storeToRefs } from "pinia";
 
-import { print } from "../shared/helpers";
+import saveCard from "./saveCard.vue";
 
 import { useSettingsStore } from "../stores/settingsStore";
 
 const { f, ui } = storeToRefs(useSettingsStore());
 
-function sendToPrint() {
-  print(document.getElementById("card1"));
-}
+const card = ref(null);
 
 onMounted(() => {});
 </script>
 
 <template>
   <div class="bg-slate-300 p-3 rounded-md">
-    <button @click="sendToPrint()">save high res image</button>
+    <saveCard :elem="card" />
     <div
+      ref="card"
       id="card1"
       class="bg-red-200 relative p-[11px] w-[361px] h-[211px] mx-auto text-sm rounded-md"
       :style="{
