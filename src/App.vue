@@ -14,7 +14,7 @@ import card05 from "./components/card05.vue";
 const store = useSettingsStore();
 const { f, ui, media } = storeToRefs(store);
 
-let isCardVisible = ref(false);
+let isCardVisible = ref(true);
 
 function toggleCard() {
   isCardVisible.value = !isCardVisible.value;
@@ -50,36 +50,36 @@ onMounted(() => {});
     </p>
     <div class="">
       <button
-        class="underline w-full bg-slate-100 hover:bg-slate-200"
+        class="underline w-full bg-slate-100 hover:bg-slate-200 h-10"
         @click="toggleCard()"
       >
-        {{ isCardVisible ? "hide card" : "show card" }}
+        {{ isCardVisible ? "update information" : "show card" }}
       </button>
     </div>
 
     <div id="settings" v-if="!isCardVisible">
       <settings />
     </div>
-    <div id="fonts" v-if="isCardVisible">
-      <div><h2>Choose A Font</h2></div>
-      <div class="grid grid-cols-3 text-center">
-        <div
-          class=""
-          v-for="font in fonts"
-          :key="font"
-          :style="{ fontFamily: font }"
-          @click="setFont(font)"
-        >
-          {{ font }}{{ font === ui.font ? "*" : "" }}
-        </div>
-      </div>
-    </div>
     <hr class="m-2 h-px bg-black border-0" />
     <div id="cards" class="w-full md:w-4/6 md:mx-auto">
       <h2>Business Cards!</h2>
-      <div class="text-xs w-2/3 mx-auto text-center italic">
+      <div class="text-xs w-2/3 mx-auto text-center italic mb-2">
         The pinkish border around the card is referred to as the bleed. The
         exported card will not have this color.
+      </div>
+      <div id="fonts" v-if="isCardVisible">
+        <div><h2>Choose A Font</h2></div>
+        <div class="grid grid-cols-3 text-center">
+          <div
+            class=""
+            v-for="font in fonts"
+            :key="font"
+            :style="{ fontFamily: font }"
+            @click="setFont(font)"
+          >
+            {{ font }}{{ font === ui.font ? "*" : "" }}
+          </div>
+        </div>
       </div>
       <card05 v-if="isCardVisible" class="mt-6" />
       <card04 v-if="isCardVisible" class="mt-6" />

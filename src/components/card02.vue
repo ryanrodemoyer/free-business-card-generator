@@ -19,7 +19,6 @@ onMounted(() => {});
 <template>
   <div class="bg-slate-300 p-3 rounded-md">
     <button @click="sendToPrint()">save high res image</button>
-    <div>design #2</div>
     <div
       id="card2"
       class="bg-red-200 relative p-[11px] w-[361px] h-[211px] mx-auto text-sm rounded-md"

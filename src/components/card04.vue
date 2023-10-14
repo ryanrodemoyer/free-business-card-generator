@@ -13,6 +13,14 @@ function sendToPrint() {
   print(document.getElementById("card4"));
 }
 
+function getEmailCssClasses(val: string): string[] {
+  if (val.length >= 30) {
+    return ["text-xs"];
+  } else {
+    return ["text-sm"];
+  }
+}
+
 onMounted(() => {});
 </script>
 
@@ -60,7 +68,9 @@ onMounted(() => {});
         <div class="">{{ f.title }}</div>
         <div class="w-full h-px bg-black my-2 mx-auto">&nbsp;</div>
         <div class="">
-          <a :href="`mailto:${f.email}`">{{ f.email }}</a>
+          <p class="break-all" :class="getEmailCssClasses(f.email)">
+            {{ f.email }}
+          </p>
         </div>
         <div class="text-sm">{{ f.phone }}</div>
 
