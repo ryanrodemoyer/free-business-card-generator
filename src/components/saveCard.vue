@@ -4,7 +4,7 @@ import { ref, onMounted } from "vue";
 import { print } from "../shared/helpers";
 
 const props = defineProps<{
-  elem: HTMLElement;
+  elem: HTMLElement | null;
 }>();
 
 function sendToPrint() {
